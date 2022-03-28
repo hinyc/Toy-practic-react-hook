@@ -8,6 +8,7 @@ const UseMemo1 = () => {
   const computeExpensiveValue = useCallback((count: number) => {
     for (let i = 0; i < 999999999; i++) {}
     console.log('복잡한계산');
+    setCount(99);
     return count;
   }, []);
 

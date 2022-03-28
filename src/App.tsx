@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import UseMemo1 from './components/UseMemo1';
+import UseCallback from './pages/useCallback';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<UseMemo1 />} />
+        <Route path="/useCallback" element={<UseCallback />} />
       </Routes>
     </BrowserRouter>
   );
