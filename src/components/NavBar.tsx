@@ -6,7 +6,7 @@ const NavBar = () => {
   const [select, setSelect] = useState(() => (window.localStorage.getItem('select') ? Number(window.localStorage.getItem('select')) : 0));
   const navigate = useNavigate();
 
-  const menuArr = useMemo(() => ['/', 'useMemo', 'useCallback'], []);
+  const menuArr = useMemo(() => ['/', 'useState', 'useMemo', 'useCallback'], []);
 
   const clickHandler = (el: string, idx: number) => {
     navigate(el);
