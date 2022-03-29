@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import UseMemo1 from './components/UseMemo1';
-import UseCallback from './pages/useCallback';
+import UseCallback from './pages/UseCallback';
 
 function App() {
   return (

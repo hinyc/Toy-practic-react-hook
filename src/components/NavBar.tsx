@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 const NavBar = () => {
-  const [select, setSelect] = useState(0);
+  const [select, setSelect] = useState(() => (window.localStorage.getItem('select') ? Number(window.localStorage.getItem('select')) : 0));
   const navigate = useNavigate();
 
   const menuArr = useMemo(() => ['/', 'useMemo', 'useCallback'], []);
@@ -11,6 +11,7 @@ const NavBar = () => {
   const clickHandler = (el: string, idx: number) => {
     navigate(el);
     setSelect(idx);
+    window.localStorage.setItem('select', String(idx));
   };
   return (
     <Container>
@@ -33,6 +34,7 @@ const NavBar = () => {
 const Container = styled.div`
   display: flex;
   justify-content: center;
+  margin: 30px;
 `;
 
 interface ContentType {
@@ -46,7 +48,7 @@ const Content = styled.div<ContentType>`
   text-align: center;
   background-color: #a2b2f2;
   color: #fff;
-  font-size: 20px;
+  font-size: 1.2rem;
   border-radius: 7px;
   margin: 5px;
   transition: 0.3s;

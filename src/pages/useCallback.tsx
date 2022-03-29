@@ -1,24 +1,33 @@
 import styled from 'styled-components';
+import UseCallbackTest from '../components/UseCallbackTest';
 
 const UseCallback = () => {
   return (
     <Container>
-      <Content>useCallback 미사용</Content>
-      <Content>useCallback 사용</Content>
+      <Content>
+        <SubTitle>useCallback 사용</SubTitle>
+        <UseCallbackTest tryHook={true} />
+      </Content>
+      <Content>
+        <SubTitle>useCallback 미사용</SubTitle>
+        <UseCallbackTest tryHook={false} />
+      </Content>
     </Container>
   );
 };
 
 const Container = styled.div`
-  width: 700px;
-  height: 300px;
+  width: 800px;
+  height: 450px;
   margin: auto;
   display: flex;
   justify-content: space-between;
 `;
-
+const SubTitle = styled.h3`
+  text-align: center;
+`;
 const Content = styled.div`
-  width: 340px;
+  width: 380px;
   border: 1px solid #c2c2c2;
 `;
 
