@@ -3,12 +3,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import UseCallback from './pages/UseCallback';
 import UseMemo from './pages/UseMemo';
+import UseState from './pages/UseState';
 
 function App() {
   return (
     <BrowserRouter>
       <NavBar />
       <Routes>
+        <Route path="/useState" element={<UseState />} />
         <Route path="/useMemo" element={<UseMemo />} />
         <Route path="/useCallback" element={<UseCallback />} />
       </Routes>
