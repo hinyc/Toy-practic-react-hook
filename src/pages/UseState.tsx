@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const UseState = () => {
   return (
     <>
       <Container>
-        <SubTitle> useState(data) </SubTitle>
-        <SubTitle> useState(( ) {`=>`} data) </SubTitle>
+        <Content>
+          <SubTitle> useState(data) </SubTitle>
+        </Content>
+        <Content>
+          <SubTitle> useState(( ) {`=>`} data) </SubTitle>
+        </Content>
       </Container>
+      <br />
       <Container>
-        <SubTitle> setUseState(data) </SubTitle>
-        <SubTitle> setUseSate((preState) {`=>`} [newData, ...PrevState]) </SubTitle>
+        <Content>
+          <SubTitle> setUseState(newData) </SubTitle>
+        </Content>
+        <Content>
+          <SubTitle>
+            {' '}
+            setUseSate((preState) {`=>`} [{<br />} &nbsp; &nbsp; newData, ...PrevState{<br />}]){' '}
+          </SubTitle>
+        </Content>
       </Container>
     </>
   );
@@ -26,7 +38,7 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 const SubTitle = styled.h3`
-  text-align: center;
+  /* text-align: center; */
 `;
 const Content = styled.div`
   width: 380px;
