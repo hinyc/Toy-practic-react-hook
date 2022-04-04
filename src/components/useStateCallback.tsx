@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function useStateCallback() {
+export default function UseStateCallback() {
   return <div>useStateCallback</div>;
 }
