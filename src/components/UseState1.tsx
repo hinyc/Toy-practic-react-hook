@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const initialData = () => {
-  console.log('초기값 반환 함수 실행');
-  return 0;
-};
-
 export default function UseState1(props: { stateCallback: boolean; setStateCallback: boolean }) {
   const { stateCallback, setStateCallback } = props;
   const [count, setCount] = useState(stateCallback ? () => initialData() : initialData());
+
+  function initialData(): number {
+    // console.log('초기값 반환 함수 실행');
+    return 0;
+  }
 
   const dualCal = () => {
     if (setStateCallback) {
@@ -27,6 +27,8 @@ export default function UseState1(props: { stateCallback: boolean; setStateCallb
       setCount(count + 1);
     }
   };
+
+  console.log('a');
   return (
     <Container>
       <P>count : {count}</P>
