@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 const UseMemo2 = (props: { tryHook: boolean }) => {
   const [random, setRandom] = useState(0);
