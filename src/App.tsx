@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material';
+import { Container, ThemeProvider } from '@mui/material';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
@@ -13,12 +13,14 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/useState" element={<UseState />} />
-          <Route path="/useMemo" element={<UseMemo />} />
-          <Route path="/useCallback" element={<UseCallback />} />
-        </Routes>
+        <Container fixed>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/useState" element={<UseState />} />
+            <Route path="/useMemo" element={<UseMemo />} />
+            <Route path="/useCallback" element={<UseCallback />} />
+          </Routes>
+        </Container>
       </ThemeProvider>
     </BrowserRouter>
   );
