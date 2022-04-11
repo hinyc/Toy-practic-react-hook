@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled from '@emotion/styled';
+import { Button, Container, Grid } from '@mui/material';
 
 const NavBar = () => {
   const [select, setSelect] = useState(() => (window.localStorage.getItem('select') ? Number(window.localStorage.getItem('select')) : 0));
@@ -14,58 +15,26 @@ const NavBar = () => {
     window.localStorage.setItem('select', String(idx));
   };
   return (
-    <Container>
-      {menuArr.map((el, idx) => (
-        <Content
-          key={idx}
-          onClick={() => {
-            clickHandler(el, idx);
-          }}
-          select={select}
-          idx={idx}
-        >
-          {el === '/' ? 'HOME' : el}
-        </Content>
-      ))}
+    <Container fixed>
+      <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', mt: 1, mb: 3 }}>
+        {menuArr.map((el, idx) => (
+          <Grid item key={idx}>
+            <Button
+              variant="contained"
+              size="small"
+              color={select === idx ? 'success' : 'primary'}
+              key={idx}
+              onClick={() => {
+                clickHandler(el, idx);
+              }}
+            >
+              {el === '/' ? 'HOME' : el}
+            </Button>
+          </Grid>
+        ))}
+      </Grid>
     </Container>
   );
 };
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 30px;
-`;
-
-interface ContentType {
-  select: number;
-  idx: number;
-}
-const Content = styled.div<ContentType>`
-  width: 130px;
-  height: 28px;
-  line-height: 28px;
-  text-align: center;
-  background-color: #a2b2f2;
-  color: #fff;
-  font-size: 1.2rem;
-  border-radius: 7px;
-  margin: 5px;
-  transition: 0.3s;
-  :hover {
-    opacity: 0.65;
-    cursor: pointer;
-  }
-  :active {
-    opacity: 0.95;
-  }
-  ${({ select, idx }) => {
-    if (select === idx) {
-      return css`
-        background-color: #c3e3c3;
-      `;
-    }
-  }}
-`;
 
 export default NavBar;

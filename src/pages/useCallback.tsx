@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import UseCallbackTest from '../components/UseCallbackTest';
 
 const UseCallback = () => {

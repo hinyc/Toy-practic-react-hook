@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled from '@emotion/styled';
 
 const UseMemo1 = (props: { tryHook: boolean }) => {
   const [count, setCount] = useState(0);
@@ -74,13 +74,6 @@ const Render = styled.p<renderType>`
   height: 50px;
   line-height: 50px;
   background-color: #e3a3e3;
-  ${({ render }) => {
-    if (render) {
-      return css`
-        background-color: #e3e3e3;
-      `;
-    }
-  }}
 `;
 const Button = styled.button`
   margin: 5px;

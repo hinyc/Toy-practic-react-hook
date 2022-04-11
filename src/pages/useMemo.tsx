@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import UseMemo1 from '../components/UseMemo1';
 import UseMemo2 from '../components/UseMemo2';
 

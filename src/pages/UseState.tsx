@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled from '@emotion/styled';
 import UseState1 from '../components/UseState1';
 const UseState = () => {
   return (
@@ -46,14 +46,7 @@ interface SubTitleType {
 const SubTitle = styled.h3<SubTitleType>`
   /* text-align: center; */
   padding-left: 5px;
-  ${({ small }) => {
-    console.log(small);
-    if (small) {
-      return css`
-        font-size: 1rem;
-      `;
-    }
-  }}
+  font-size: ${({ small }) => (small ? '1rem' : null)};
 `;
 const Content = styled.div`
   width: 380px;
